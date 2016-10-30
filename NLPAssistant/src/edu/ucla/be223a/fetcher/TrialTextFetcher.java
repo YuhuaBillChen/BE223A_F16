@@ -87,17 +87,17 @@ public class TrialTextFetcher {
 	 * 		  3rd and after are the names of subfields need to fetch
 	 */
 	public static void main(String args[]){
-		int study_id = 1381;
+		int study_id = 99999;
 		String file_path = "NTC"+study_id+".json";
 		List<String> fields = new ArrayList<>();
-		if (args.length < 4){
+		if (args.length < 3){
 			fields.add("criteria");
 			System.out.println("Invalid argument number, default arguments are used!");
 		}
 		else{	
-			study_id = Integer.parseInt(args[1]);
-			file_path = args[2];
-			for (int i = 3; i < args.length; i++){
+			study_id = Integer.parseInt(args[0]);
+			file_path = args[1];
+			for (int i = 2; i < args.length; i++){
 				fields.add(args[i]);
 			}
 		}
