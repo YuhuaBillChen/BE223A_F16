@@ -42,8 +42,8 @@ var http = require("http");
 
 http.createServer(function (request, response){
 	response.writeHead(200,{'Content-Type':'text/html'});
-	var htmlStr = "<html><head><title>Nodejs with MySQL Query</title></head><body><h1 align='center'>List of Criteria</h1>";
-	htmlStr+= "<table>";
+	var htmlStr = "<html><head><title>Nodejs with MySQL Query</title></head><body><h1 align='center'>NLP Lexical Analysis</h1><div>Applying natural language processing (NLP) techniques toward lexical analysis of language complexity</div>";
+	htmlStr+= "<table border = '1'>";
 	htmlStr+= "<tr><td>Study Id</td><td>Study name</td><td>Criteria</td></tr>";
 	for (var i = 0; i < data_rows.length; i++) {
 		htmlStr+= "<tr><td>"+data_rows[i].id+"</td>"+
@@ -51,6 +51,7 @@ http.createServer(function (request, response){
 		"<td>"+data_rows[i].criteria+"</td></tr>";
 	};
 	htmlStr += "</table>";
+	htmlStr +="<form method='post' target='_blank' onsubmit='try {return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);} catch (e) {return false;}'><p> What illness demographic would you like to consider? </p><label> You picked: </label><input type='text' size='5' value=''><input type='submit' value='Proceed to my selection'></form>";	
 	htmlStr += "<h3 align='center'>CS223A Fall 16<h3></body></html>"
 	response.end(htmlStr);
 }).listen(8081);
