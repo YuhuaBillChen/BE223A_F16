@@ -2,11 +2,19 @@
 /** SQL Query **/
 var mysql = require("mysql");
 
+/**
+localhost setting:
+host: "localhost",
+user:"root",
+password:"123456",
+database:"cs223"
+**/
+
 var con = mysql.createConnection({
-	host: "localhost",
-	user: "root",
-	password: "123456",
-	database: "cs223"
+	host: "108.179.232.69",
+	user: "jeiqichu_roy",
+	password: "be223db",
+	database: "jeiqichu_test"
 });
 
 con.connect(function(err){
@@ -19,12 +27,12 @@ con.connect(function(err){
 
 var data_rows;
 
-con.query('SELECT * FROM 223aaa LIMIT 5;' ,function(err,rows){
+con.query('SELECT * FROM med_info LIMIT 20;' ,function(err,rows){
 	if(err) throw err;
 	data_rows = rows;
 	console.log('Data received from Db:\n');
 	for (var i = 0; i < rows.length; i++) {
-		console.log(rows[i].id+"\t\t"+rows[i].study_name);
+		console.log(rows[i].identifier+"\t\t"+rows[i].brief_title);
 	};
 });
 
@@ -44,10 +52,22 @@ http.createServer(function (request, response){
 	response.writeHead(200,{'Content-Type':'text/html'});
 	var htmlStr = "<html><head><title>Nodejs with MySQL Query</title></head><body><h1 align='center'>NLP Lexical Analysis</h1><div>Applying natural language processing (NLP) techniques toward lexical analysis of language complexity</div>";
 	htmlStr+= "<table border = '1'>";
-	htmlStr+= "<tr><td>Study Id</td><td>Study name</td><td>Criteria</td></tr>";
+	htmlStr+= "<tr><td>#id</td>"+
+	"<td>identifier</td>" + 
+	"<td>title</td>" + 
+	"<td>gender</td>" + 
+	"<td>min age</td>" + 
+	"<td>max age</td>" + 
+	"<td>healthy</td>" + 
+	"<td>criteria</td></tr>";
 	for (var i = 0; i < data_rows.length; i++) {
 		htmlStr+= "<tr><td>"+data_rows[i].id+"</td>"+
-		"<td>"+data_rows[i].study_name+"</td>" + 
+		"<td>"+data_rows[i].identifier+"</td>" + 
+		"<td>"+data_rows[i].brief_title+"</td>" + 
+		"<td>"+data_rows[i].gender+"</td>" + 
+		"<td>"+data_rows[i].minimum_age+"</td>" + 
+		"<td>"+data_rows[i].maximum_age+"</td>" + 
+		"<td>"+data_rows[i].healthy_volunteers+"</td>" + 
 		"<td>"+data_rows[i].criteria+"</td></tr>";
 	};
 	htmlStr += "</table>";
