@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class=container>
+<h1 align='center'>NLP Lexical Analysis</h1>
+<div>Applying natural language processing (NLP) techniques toward lexical analysis of language complexity</div>
+<h2>Database Results</h2>
+<table border = '1'>
+  <tr>
+    <td>#id</td>
+    <td>identifier</td>
+    <td>title</td>
+    <td>gender</td>
+    <td>min age</td>
+    <td>max age</td>
+    <td>healthy</td>
+    <td>criteria</td>
+  </tr>
+    <% results.forEach(function(r) { %>
+    <tr>
+    <td><%=r.id%></td>
+    <td><%=r.identifier%></td> 
+    <td><%=r.brief_title%></td> 
+    <td><%=r.gender%></td>
+    <td><%=r.minimum_age%></td>
+    <td><%=r.maximum_age%></td> 
+    <td><%=r.healthy_volunteers%></td> 
+    <td><%=r.criteria%></td></tr>
+    <tr> 
+    <% }); %>
+</table>
+<!--Search Form-->
+<form method='post' target='_blank' onsubmit='try {return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);} catch (e) {return false;}'><p> What illness demographic would you like to consider? </p><label> You picked: </label><input type='text' size='5' value=''><input type='submit' value='Proceed to my selection'></form>
+<h3 align='center'>CS223A Fall 16<h3>
+</div>
+
+</body>
+</html>
