@@ -48,7 +48,7 @@ public class GateBatchLauncher {
 	
 	
 	public static void main(String[] args){
-		GateBatchLauncher gbLauncher = new GateBatchLauncher("resources/gate-batch-223a.properties");
+		GateBatchLauncher gbLauncher = new GateBatchLauncher("resources/gate-batch-223a-remote.properties");
 		try {
 			gbLauncher.init();
 		} catch (IOException e) {

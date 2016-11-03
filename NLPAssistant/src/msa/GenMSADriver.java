@@ -1,4 +1,4 @@
-package edu.ucla.be223a.gatemsa;
+package msa;
 
 import java.io.FileReader;
 import java.sql.Connection;
@@ -13,18 +13,10 @@ import com.google.gson.Gson;
 import align.AnnotationGridElement;
 import align.AnnotationSequenceGrid;
 import align.GenAnnotationGrid;
-import msa.AnnotationSequence;
-import msa.GenMSA;
-import msa.GenSentences;
-import msa.MSAProfile;
-import msa.MSAUtils;
-import msa.MultipleSequenceAlignment;
-import msa.ProfileGrid;
 import msa.db.CassandraDBInterface;
 import msa.db.MSADBInterface;
 import msa.db.MySQLDBInterface;
 import nlputils.sequence.SequenceUtilities;
-
 import utils.db.DBConnection;
 
 public class GenMSADriver

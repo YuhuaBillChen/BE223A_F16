@@ -64,5 +64,6 @@
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/xstream-1.4.7.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/mysql-connector-java-5.0.8-bin.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/mysql-connector-java-5.0.8-bin-g.jar"/>
+	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/nlputils-sequence.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
