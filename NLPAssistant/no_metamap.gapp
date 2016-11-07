@@ -5,30 +5,75 @@
         <urlString>$gatehome$plugins/ANNIE</urlString>
       </gate.util.persistence.PersistenceManager-URLHolder>
       <gate.util.persistence.PersistenceManager-URLHolder>
-        <urlString>$gatehome$plugins/Tagger_MetaMap</urlString>
-      </gate.util.persistence.PersistenceManager-URLHolder>
-      <gate.util.persistence.PersistenceManager-URLHolder>
-        <urlString>$gatehome$plugins/Tagger_Numbers</urlString>
-      </gate.util.persistence.PersistenceManager-URLHolder>
-      <gate.util.persistence.PersistenceManager-URLHolder>
-        <urlString>$gatehome$plugins/Tagger_DateNormalizer</urlString>
+        <urlString>$gatehome$plugins/Stanford_CoreNLP</urlString>
       </gate.util.persistence.PersistenceManager-URLHolder>
       <gate.util.persistence.PersistenceManager-URLHolder>
         <urlString>$gatehome$plugins/Tools</urlString>
       </gate.util.persistence.PersistenceManager-URLHolder>
       <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$gatehome$plugins/Tagger_DateNormalizer</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
+        <urlString>$gatehome$plugins/Tagger_Numbers</urlString>
+      </gate.util.persistence.PersistenceManager-URLHolder>
+      <gate.util.persistence.PersistenceManager-URLHolder>
         <urlString>$gatehome$plugins/JAPE_Plus</urlString>
       </gate.util.persistence.PersistenceManager-URLHolder>
       <gate.util.persistence.PersistenceManager-URLHolder>
-        <urlString>$gatehome$plugins/Stanford_CoreNLP</urlString>
+        <urlString>$gatehome$plugins/Tagger_MetaMap</urlString>
       </gate.util.persistence.PersistenceManager-URLHolder>
     </localList>
     <collectionType>java.util.ArrayList</collectionType>
   </urlList>
-  <application class="gate.util.persistence.SerialAnalyserControllerPersistence">
+  <application class="gate.util.persistence.ControllerPersistence">
     <prList class="gate.util.persistence.CollectionPersistence">
       <localList>
         <gate.util.persistence.LanguageAnalyserPersistence>
+          <document class="gate.util.persistence.LRPersistence">
+            <resourceType>gate.corpora.DocumentImpl</resourceType>
+            <resourceName>tryout1</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>sourceUrl</string>
+                  <null/>
+                </entry>
+                <entry>
+                  <string>preserveOriginalContent</string>
+                  <boolean>false</boolean>
+                </entry>
+                <entry>
+                  <string>collectRepositioningInfo</string>
+                  <boolean>false</boolean>
+                </entry>
+                <entry>
+                  <string>markupAware</string>
+                  <boolean>true</boolean>
+                </entry>
+                <entry>
+                  <string>sourceUrlEndOffset</string>
+                  <null/>
+                </entry>
+                <entry>
+                  <string>stringContent</string>
+                  <string></string>
+                </entry>
+                <entry>
+                  <string>mimeType</string>
+                  <null/>
+                </entry>
+                <entry>
+                  <string>encoding</string>
+                  <string>UTF-8</string>
+                </entry>
+                <entry>
+                  <string>sourceUrlStartOffset</string>
+                  <null/>
+                </entry>
+              </localMap>
+            </initParams>
+          </document>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -42,12 +87,12 @@
               </entry>
               <entry>
                 <string>document</string>
-                <null/>
+                <gate.util.persistence.LRPersistence reference="../../../../document"/>
               </entry>
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.tokeniser.DefaultTokeniser</resourceType>
-          <resourceName>ANNIE English Tokeniser 0000F</resourceName>
+          <resourceName>ANNIE English Tokeniser 0000A</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -75,6 +120,7 @@
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
+          <document class="gate.util.persistence.LRPersistence" reference="../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -92,12 +138,12 @@
               </entry>
               <entry>
                 <string>document</string>
-                <null/>
+                <gate.util.persistence.LRPersistence reference="../../../../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
               </entry>
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.splitter.SentenceSplitter</resourceType>
-          <resourceName>ANNIE Sentence Splitter</resourceName>
+          <resourceName>ANNIE Sentence Splitter 0001B</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -125,6 +171,7 @@
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
+          <document class="gate.util.persistence.LRPersistence" reference="../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -146,12 +193,12 @@
               </entry>
               <entry>
                 <string>document</string>
-                <null/>
+                <gate.util.persistence.LRPersistence reference="../../../../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
               </entry>
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
-          <resourceName>ANNIE Gazetteer</resourceName>
+          <resourceName>ANNIE Gazetteer 0001A</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -181,6 +228,7 @@
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
+          <document class="gate.util.persistence.LRPersistence" reference="../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -190,7 +238,7 @@
               </entry>
               <entry>
                 <string>document</string>
-                <null/>
+                <gate.util.persistence.LRPersistence reference="../../../../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
               </entry>
               <entry>
                 <string>corpus</string>
@@ -201,16 +249,16 @@
                 <null/>
               </entry>
               <entry>
+                <string>inputASName</string>
+                <null/>
+              </entry>
+              <entry>
                 <string>posTagAllTokens</string>
                 <boolean>true</boolean>
               </entry>
               <entry>
                 <string>baseTokenAnnotationType</string>
                 <string>Token</string>
-              </entry>
-              <entry>
-                <string>inputASName</string>
-                <null/>
               </entry>
               <entry>
                 <string>baseSentenceAnnotationType</string>
@@ -223,7 +271,7 @@
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.POSTagger</resourceType>
-          <resourceName>ANNIE POS Tagger</resourceName>
+          <resourceName>ANNIE POS Tagger 0001F</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -251,6 +299,7 @@
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
+          <document class="gate.util.persistence.LRPersistence" reference="../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -276,7 +325,7 @@
               </entry>
               <entry>
                 <string>document</string>
-                <null/>
+                <gate.util.persistence.LRPersistence reference="../../../../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
               </entry>
               <entry>
                 <string>corpus</string>
@@ -297,7 +346,7 @@
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.dates.DateNormalizer</resourceType>
-          <resourceName>Date Normalizer 00014</resourceName>
+          <resourceName>Date Normalizer 0001C</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -334,7 +383,7 @@
               </entry>
               <entry>
                 <string>document</string>
-                <null/>
+                <gate.util.persistence.LRPersistence reference="../../../../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
               </entry>
               <entry>
                 <string>corpus</string>
@@ -347,7 +396,7 @@
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.morph.Morph</resourceType>
-          <resourceName>GATE Morphological analyser 00015</resourceName>
+          <resourceName>GATE Morphological analyser 0001F</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -369,16 +418,17 @@
           </features>
         </gate.util.persistence.PRPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
+          <document class="gate.util.persistence.LRPersistence" reference="../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>failOnMissingInputAnnotations</string>
-                <boolean>true</boolean>
-              </entry>
-              <entry>
                 <string>annotationSetName</string>
                 <null/>
+              </entry>
+              <entry>
+                <string>failOnMissingInputAnnotations</string>
+                <boolean>true</boolean>
               </entry>
               <entry>
                 <string>corpus</string>
@@ -394,12 +444,12 @@
               </entry>
               <entry>
                 <string>document</string>
-                <null/>
+                <gate.util.persistence.LRPersistence reference="../../../../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
               </entry>
             </localMap>
           </runtimeParams>
           <resourceType>gate.creole.numbers.NumbersTagger</resourceType>
-          <resourceName>Numbers Tagger 00017</resourceName>
+          <resourceName>Numbers Tagger 00021</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -448,7 +498,7 @@
               </entry>
               <entry>
                 <string>document</string>
-                <null/>
+                <gate.util.persistence.LRPersistence reference="../../../../../gate.util.persistence.LanguageAnalyserPersistence/document"/>
               </entry>
               <entry>
                 <string>includeExtraDependencies</string>
@@ -489,7 +539,7 @@
             </localMap>
           </runtimeParams>
           <resourceType>gate.stanford.Parser</resourceType>
-          <resourceName>StanfordParser 0001B</resourceName>
+          <resourceName>StanfordParser 0001E</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
@@ -517,8 +567,8 @@
       </localList>
       <collectionType>java.util.ArrayList</collectionType>
     </prList>
-    <resourceType>gate.creole.SerialAnalyserController</resourceType>
-    <resourceName>corpus_pipeline</resourceName>
+    <resourceType>gate.creole.SerialController</resourceType>
+    <resourceName>Pipeline 00024</resourceName>
     <initParams class="gate.util.persistence.MapPersistence">
       <mapType>gate.util.SimpleFeatureMapImpl</mapType>
       <localMap/>

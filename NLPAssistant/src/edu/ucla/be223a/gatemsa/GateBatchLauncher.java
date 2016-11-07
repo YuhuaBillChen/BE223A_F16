@@ -54,7 +54,6 @@ public class GateBatchLauncher {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		GenMSADriver d = new GenMSADriver();
 		gbLauncher.run();
 		return;
 	}

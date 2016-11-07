@@ -51,7 +51,6 @@
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/spring-aop-2.5.6.SEC01.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/spring-beans-2.5.6.SEC01.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/spring-core-2.5.6.SEC01.jar"/>
-	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/stanford-parser.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/stax2-api-3.1.1.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/tika-core-1.5.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/tika-parsers-1.5.jar"/>
