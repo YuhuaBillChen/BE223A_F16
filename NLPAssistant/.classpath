@@ -29,7 +29,6 @@
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/gate.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/gson-2.2.4.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/hamcrest-core-1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/ie.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/ivy-2.3.0.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/jackson-annotations-2.3.0.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/jackson-core-2.3.2.jar"/>
@@ -64,5 +63,6 @@
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/mysql-connector-java-5.0.8-bin.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/mysql-connector-java-5.0.8-bin-g.jar"/>
 	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/workspace/BE223A_F16/NLPAssistant/lib/nlputils-sequence.jar"/>
+	<classpathentry kind="lib" path="/Users/bill/Documents/study/UCLA_16F/223a/gate-library/lib/ie_v3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
