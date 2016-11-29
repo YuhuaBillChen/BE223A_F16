@@ -25,11 +25,11 @@ public class MSALauncher {
 		in.close();		
 		dbUser = props.getProperty("docDBUser");
 		dbPwd = props.getProperty("docDBPassword");
-		msa_driver.init(dbUser, dbPwd, props);
+		msa_driver.init(props);
 	}
 	
 	public void run(){
-		msa_driver.run(dbUser, dbPwd);
+		msa_driver.run(dbUser, dbPwd, dbUser,dbPwd);
 	}
 	public static void main(String[] args){
 		MSALauncher msa = new MSALauncher("resources/gen-msa-remote.properties");
