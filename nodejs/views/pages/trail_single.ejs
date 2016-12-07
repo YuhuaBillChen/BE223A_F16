@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class=container>
+<h1 align='center'><%=r.brief_title%></h1>
+<div class="row">
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>Identifier</td>    <td><%=r.identifier%></td>
+  </tr>
+
+  <tr>
+    <td>Gender</td>    <td><%=r.gender%></td>
+  </tr>
+  <tr>
+    <td>Min Age</td>    <td><%=r.minimum_age%></td>
+  </tr>
+  <tr>
+    <td>Max Age</td>    <td><%=r.maximum_age%></td>
+  </tr>
+  <tr>
+    <td>Healthy</td>    <td><%=r.healthy_volunteers%></td>
+  </tr>
+  <tr>
+    <td>Criteria</td>    <td><%=r.criteria%></td>
+  </tr>        
+</table>
+</div>
+<h3 align='center'>CS223A Fall 16<h3>
+</div>
+
+</body>
+</html>

@@ -10,6 +10,8 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "jsonfile": "2.4.0",
+    "pagination": "0.4.4",
     "ejs": "2.4.1",
     "express": "4.13.3",
     "mysql": "^2.5.4"
