@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/header.ejs %>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class=container>
+    <div class="panel" style="width: 465px;height: 510px;">
+        <canvas id="Chart" width="400" height="400"></canvas>
+    </div>
+</div>
+
+<script>
+    var ctx = document.getElementById("Chart");
+    var myData = {
+        labels: ["type1", "type2", "type3","type4", "type5", "type6","type7", "type8", "type9"],
+        datasets: [
+            {
+                label: "Clinical Trial 1",
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "rgba(87,160,199,1)",
+                borderColor: "rgba(87,160,199,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(87,160,199,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [12, 13, 17,22, 23, 27,2, 3, 7],
+                spanGaps: false,
+            },
+            {
+                label: "Clinical Trial 2",
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "rgba(0,208,176,1)",
+                borderColor: "rgba(0,208,176,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(0,208,176,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [172, 33, 47,52, 13, 47, 22, 12, 17],
+                spanGaps: false,
+            },
+            {
+                label: "Clinical Trial 3",
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "rgba(255,116,115,1)",
+                borderColor: "rgba(255,116,115,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(255,116,115,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [72, 43, 42,22, 33, 17, 42, 22, 10],
+                spanGaps: false,
+            }
+
+        ]
+    };
+
+    var myLineChart = new Chart(ctx, {
+        type: 'bar',
+        data: myData,
+        options: {
+            responsive: true
+
+        }
+    });
+</script>
+</body>
+</html>

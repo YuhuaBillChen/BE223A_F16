@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class=container>
+    <h1 align='center'></h1>
+    <div id="chart_div"></div>
+</div>
+
+<script>
+    var dataAll =<%- JSON.stringify(dataAll) %>;
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawBackgroundColor);
+
+    function drawBackgroundColor() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Demo');
+        data.addRows(dataAll);
+
+        var options = {
+            hAxis: {
+                title: 'x'
+            },
+            vAxis: {
+                title: 'y'
+            },
+            backgroundColor: '#f1f8e9'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+</body>
+</html>
