@@ -10,21 +10,25 @@
 
 <div class=container>
 <h1 align='center'>Trial Criterias</h1>
+<div class = "row">
+    <div align='right' class = "col-md-12">
+        <div ><%-nav_render%></div>
+    </div>
+</div>
+
 <div class="row">
-    <div class="col-md-8">
+    <div class = "col-md-8">
+    </div>
+    <div align='right' class="col-md-4">
         <form action="/trail" method='post' class="search-form">
             <div class="form-group has-feedback">
                 <label for="search" class="sr-only">Search</label>
-                <input type="text" class="form-control" name="search" id="search" placeholder="Search for criteria">
+                <input type="text" class="form-control" name="search" id="search" placeholder="Search for criteria and title">
                 <span class="glyphicon glyphicon-search form-control-feedback"></span>
             </div>
         </form>
     </div>
-    <div class = "col-md-4">
-        <div align='right'><%-nav_render%></div>
-    </div>
 </div>
-
 <div class="row">
 <table class="table table-bordered table-striped">
   <tr>
