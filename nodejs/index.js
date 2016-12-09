@@ -45,16 +45,23 @@ function db_connection() {
     });
 }
 
+function get_color(i){
+    colors = ['#b87333','silver','gold','#e5e4e2'];
+    return colors[i%4];
+}
+
 function google_chart(in_json, number) {
     var count = 0;
     var out_str = '';
     out_str = '{';
-    out_str += '"cols":[{"id": "", "label": "Name", "pattern":"", "type": "string"},{"id": "", "label": "Percentage/Hits", "pattern":"", "type": "number"}],';
+    out_str += '"cols":[{"id": "", "label": "Name", "pattern":"", "type": "string"},{"id": "", "label": "Percentage/Hits", "pattern":"", "type": "number"}, {"id":"","role":"style","type":"string"}],';
     out_str += '"rows":['
     var keys = Object.keys(in_json.terms);
     keys.forEach(function (k) {
-        if (count < number)
-            out_str += '{"c":[{"v":"' + k + '",},{"v":' + in_json.terms[k] + '}]},'
+        if (count < number){
+            var color = get_color(count);
+            out_str += '{"c":[{"v":"' + k + '",},{"v":' + in_json.terms[k] + '},{"v":"'+color+'"}]},'
+        }
         count++;
     })
     out_str += '			]'
