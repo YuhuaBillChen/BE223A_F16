@@ -1,0 +1,1 @@
+{"terms":{"male or female":5, "[condition] women": 4, "women [condition]": 3}}

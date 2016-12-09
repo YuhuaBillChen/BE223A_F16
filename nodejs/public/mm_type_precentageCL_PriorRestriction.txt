@@ -1,0 +1,1 @@
+{"terms":{"history of":15, "Histologically proven/confirmed": 14, "Histologically or cytologically confirmed":9, "Patients with(out)": 9, "must have": 9, "Histologically or cytologically proven/confirmed":8, "No prior": 6, "No history of":4, "must not have": 4, "No previous": 3, "must be excluded": 2 }}

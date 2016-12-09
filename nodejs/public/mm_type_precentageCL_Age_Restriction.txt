@@ -1,0 +1,1 @@
+{"terms":{"[root:Age] [number] and over":17,"[age range] [number] years of age":9, "[age range] [number] years":9, "[age range] [number] years old":4}}

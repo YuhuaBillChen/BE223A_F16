@@ -1,0 +1,1 @@
+{"terms":{"at least [time] since":25, "within [time] prior":9, "within the last/past [time]": 7, "in last [time]": 2, "more than [time] must": 2, "greater than [time]":2, "[time] must have elapsed": 2}}

@@ -1,0 +1,1 @@
+{"terms":{"within":11, "age": 11, "history":10, "prior": 9, "allow": 9, "medication": 8, "exclude": 7, "HIV (Antivirus): zidovudine, azt": 6, "year": 4, "HIV (Lung): aerosolized, pentamidine": 2, "Lung Condition:pneumonia, pneumocytosis":2, "Liver Damage: hepatotoxic, liver disease": 2, "not have":1}}

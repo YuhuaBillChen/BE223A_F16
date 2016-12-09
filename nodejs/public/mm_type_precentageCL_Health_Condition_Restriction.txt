@@ -1,0 +1,1 @@
+{"terms":{"must have":7, "patients with": 3, "diagnosed with": 3, "diagnosis of": 3, "have received": 2, "days prior": 2}}

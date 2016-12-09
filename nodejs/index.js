@@ -67,6 +67,18 @@ function gc_get_file(which_data){
 			return "public/mm_type_precentage.json";
 		case "2":
 			return "public/mm_type_frequency.json";
+		case "3":
+			return "public/mm_type_precentageCL_Age Restriction.txt"
+		case "4":
+			return "public/mm_type_precentageCL_Annotation.txt";
+		case "5":			
+			return "public/mm_type_precentageCL_Current_Restriction.txt";
+		case "6":
+			return "public/mm_type_precentageCL_MaleFemale_Restriction.txt"
+		case "7":
+			return "public/mm_type_precentageCL_PriorRestriction.txt";
+		case "8":
+			return "public/mm_type_precentageCL_Time_Restriction.txt";
 	}
 	return null;
 }
@@ -77,6 +89,18 @@ function gc_get_title(which_data){
 			return "Semantic Type Precentage";
 		case "2":
 			return "Term Hits";
+		case "3":
+			return "Age Restriction";
+		case "4":
+			return "Annotation";
+		case "5":
+			return "Current Restriction";
+		case "6":
+			return "MaleFemale Restriction";
+		case "7":
+			return  "PriorRestriction";
+		case "8":
+			return  "Time Restriction";
 	}
 	return null;
 }
