@@ -252,6 +252,10 @@ app.get("/trail/id/:id", function (request, response, next) {
     });
 })
 
+app.get("/lan_var", function(request,response){
+    response.render('pages/lan_var');
+})
+
 app.get("/chart", function (request, response) {
     // Load data only once
     con.query('select * from googlechart_test', function (err, rows) {
