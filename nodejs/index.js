@@ -46,8 +46,8 @@ function db_connection() {
 }
 
 function get_color(i){
-    colors = ['#b87333','silver','gold','#e5e4e2'];
-    return colors[i%4];
+    colors = ['#29339B','#CAA8F5','#ED0E0E','#BCF4F5','#FAE8EB'];
+    return colors[i%colors.length];
 }
 
 function google_chart(in_json, number) {
