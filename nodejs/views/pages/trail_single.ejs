@@ -30,10 +30,19 @@
   </tr>
   <tr>
     <td>Criteria</td>    <td><%=r.criteria%></td>
-  </tr>        
+  </tr>
+  <tr>
+    <td>Annotation</td>    <td class="lead"><%-out_str%></td>
+  </tr>          
 </table>
+<hr>
+<h4>Annotaion Category</h4>
+<% var keys = Object.keys(cat_dict)
+   for (i = 0 ; i < keys.length; i++) {%>
+      <span class = '<%=cat_dict[keys[i]]%>' ><%=keys[i]%></span>
+<%}%>
 </div>
-<h3 align='center'>CS223A Fall 16<h3>
+<h3 align='center'>CS223A Fall 16</h3>
 </div>
 
 </body>

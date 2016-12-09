@@ -127,6 +127,34 @@ function gc_res_render(which_data,number,response, page){
 	  	'title': title});
 }
 
+function get_bgstyle(i){
+    var bgs = ["bg-primary", "bg-success", "bg-info", "bg-warning","bg-danger"];
+    return bgs[i%bgs.length];
+}
+
+
+function mk_annotCriteria(rows){
+    dict = {};
+    out_str = "";
+    for (i = 0 ; i < rows.length; i++){
+        r = rows[i];
+        f = JSON.parse(r.features);
+        if (f.category != undefined){
+            if (f.category.length > 1){
+                key = f.category;
+                if (!(key in dict)){
+                    dict[key] = get_bgstyle(Object.keys(dict).length);
+                }
+                out_str += "<a href='#'' data-toggle='tooltip' title='"+key+"'><span class='"+dict[key]+" text-muted'>"+r.value+"</span></a> ";
+            }
+            else{
+                out_str += r.value + " ";       
+            }
+        }
+    }
+    return [dict, out_str];
+}
+
 db_connection();
 
 app.set('port', (process.env.PORT || 5000));
@@ -282,10 +310,15 @@ app.get("/trail/c/:search/page/:pageNum", function (request, response, next) {
 
 app.get("/trail/id/:id", function (request, response, next) {
     id = request.params.id;
-    con.query('SELECT * FROM med_info where id = ' + id + ";", function (err, rows) {
-        response.render('pages/trail_single', {
-            'r': rows[0]
-        });
+    con.query('SELECT * FROM med_info where id = ' + id + ";", function (err, doc_rows) {
+        con.query('SELECT * FROM annotation where document_id ='+id+';',function(err2, anno_rows){
+            res = mk_annotCriteria(anno_rows);           
+            response.render('pages/trail_single', {
+                'r': doc_rows[0],
+                'cat_dict': res[0],
+                'out_str': res[1]
+            });
+        })
     });
 })
 
