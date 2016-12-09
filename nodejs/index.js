@@ -68,17 +68,19 @@ function gc_get_file(which_data){
 		case "2":
 			return "public/mm_type_frequency.json";
 		case "3":
-			return "public/mm_type_precentageCL_Age Restriction.txt"
+			return "public/mm_type_precentageCL_Age_Restriction.json"
 		case "4":
-			return "public/mm_type_precentageCL_Annotation.txt";
+			return "public/mm_type_precentageCL_Annotation.json";
 		case "5":			
-			return "public/mm_type_precentageCL_Current_Restriction.txt";
+			return "public/mm_type_precentageCL_Current_Restriction.json";
 		case "6":
-			return "public/mm_type_precentageCL_MaleFemale_Restriction.txt"
+			return "public/mm_type_precentageCL_Health_Condition_Restriction.json";
 		case "7":
-			return "public/mm_type_precentageCL_PriorRestriction.txt";
+			return "public/mm_type_precentageCL_MaleFemale_Restriction.json"
 		case "8":
-			return "public/mm_type_precentageCL_Time_Restriction.txt";
+			return "public/mm_type_precentageCL_PriorRestriction.json";
+		case "9":
+			return "public/mm_type_precentageCL_Time_Restriction.json";
 	}
 	return null;
 }
@@ -96,22 +98,26 @@ function gc_get_title(which_data){
 		case "5":
 			return "Current Restriction";
 		case "6":
-			return "MaleFemale Restriction";
+			return "Health Condition Restriction"
 		case "7":
-			return  "PriorRestriction";
+			return "MaleFemale Restriction";
 		case "8":
+			return  "PriorRestriction";
+		case "9":
 			return  "Time Restriction";
 	}
 	return null;
 }
 
-function gc_res_render(which_data,number,response){
-	var title = gc_get_title(which_data);
-	response.render("pages/meta_map",{
+function gc_res_render(which_data,number,response, page){
+	var title = gc_get_title(String(which_data));	
+	page = page || "pages/meta_map";
+	response.render(page,{
 		'which_data':which_data,
 	  	'number':number,
 	  	'title': title});
 }
+
 
 db_connection();
 
@@ -183,6 +189,21 @@ app.get("/get_json/w/:which_data/n/:number", function(request,response){
 	jsonfile.readFile(file, function(err, obj) {
 	  response.send(google_chart(obj,number));
 	})
+})
+
+app.get("/msa_charts/", function(request, response){
+	var which_data = 3;
+	var number = 20;
+	var title = gc_get_title(which_data);
+	gc_res_render(which_data,number,response,"pages/msa_charts");	
+})
+
+
+app.get("/msa_charts/w/:which_data/n/:number", function(request, response){
+	var which_data = request.params.which_data;
+	var number = request.params.number;
+	var title = gc_get_title(which_data);
+	gc_res_render(which_data,number,response, "pages/msa_charts");	
 })
 
 // Metamap Visuals

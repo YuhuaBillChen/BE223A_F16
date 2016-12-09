@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    // Load the Visualization API and the piechart package.
+    google.charts.load('current', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+      
+    function drawChart() {
+      var title="<%=title%>"
+      var which_data=<%=which_data%>
+      var number  = <%=number%>
+
+      var url = "/get_json/w/"+which_data+"/n/"+number
+
+      var jsonData = $.ajax({
+          url: url,
+          dataType: "json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(jsonData);
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, {title: title, 
+        chartArea: { top: '50' },width: 1200, height:900});
+    }
+
+    </script>
+
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class=container>
+    <% var url = "/msa_charts/w/"+which_data+"/n/"%>
+<div align='center'>Top: <a href="<%=url+20%>" class="btn btn-primary" role="button">20</a>
+            <a href="<%=url+50%>" class="btn btn-primary" role="button">50</a>
+            <a href="<%=url+100%>" class="btn btn-primary" role="button">100</a>
+<div>
+<!--Div that will hold the pie chart-->
+<div id="chart_div"></div>
+<h3 align='center'>CS223A Fall 16<h3>
+</div>
+
+</body>
+</html>
