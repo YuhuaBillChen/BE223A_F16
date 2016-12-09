@@ -148,9 +148,9 @@ var rowsPerPage = 20;
 var currentPage = 1;
 var totalResult = 6653;
 
-function createPaginator(currentPage, totalResult) {
+function createPaginator(prelink, currentPage,  totalResult) {
     var boostrapPaginator = new pagination.TemplatePaginator({
-        prelink: '/trail', current: currentPage, rowsPerPage: rowsPerPage,
+        prelink: prelink, current: currentPage, rowsPerPage: rowsPerPage,
         totalResult: totalResult, slashSeparator: true,
         template: function (result) {
             var i, len, prelink;
@@ -223,24 +223,54 @@ app.get("/meta_map/w/:which_data/n/:number",function(request,response,next){
 })
 
 app.get("/trail", function (request, response) {
-    boostrapPaginator = createPaginator(1, totalResult)
+    boostrapPaginator = createPaginator('/trail',1, totalResult)
     con.query('SELECT * FROM med_info LIMIT 0,' + rowsPerPage + ";", function (err, rows) {
         response.render('pages/trail', {
             'results': rows,
+            'keywords': "",
             'nav_render': boostrapPaginator.render()
         });
     });
 })
 
+app.post("/trail", function(request, response){
+    var search = request.body.search;
+    var pageNum = 1;
+    boostrapPaginator = createPaginator("/trail/c/"+search,pageNum, totalResult)
+    con.query('SELECT * FROM med_info where criteria LIKE \'% '+search+' %\' or brief_title LIKE \'% '+search+' %\' LIMIT ' + (rowsPerPage * (pageNum - 1)) + ',' + rowsPerPage + ";", function (err, rows) {       
+        response.render('pages/trail', {
+            'results': rows,
+            'keywords': search,
+            'nav_render': boostrapPaginator.render()
+        });
+    });    
+})
+
+
 app.get("/trail/page/:pageNum", function (request, response, next) {
     pageNum = request.params.pageNum;
-    boostrapPaginator = createPaginator(pageNum, totalResult)
+    boostrapPaginator = createPaginator("/trail",pageNum, totalResult)
     con.query('SELECT * FROM med_info LIMIT ' + (rowsPerPage * (pageNum - 1)) + ',' + rowsPerPage + ";", function (err, rows) {
         response.render('pages/trail', {
             'results': rows,
+            'keywords': "",
             'nav_render': boostrapPaginator.render()
         });
     });
+})
+
+app.get("/trail/c/:search/page/:pageNum", function (request, response, next) {
+    pageNum = request.params.pageNum;
+    search = request.params.search;
+    boostrapPaginator = createPaginator("/trail/c/"+search,pageNum, totalResult)
+    con.query('SELECT * FROM med_info where criteria LIKE \'% '+search+' %\' or brief_title LIKE \'% '+search+' %\' LIMIT ' + (rowsPerPage * (pageNum - 1)) + ',' + rowsPerPage + ";", function (err, rows) {
+        response.render('pages/trail', {
+            'results': rows,
+            'keywords': search,
+            'nav_render': boostrapPaginator.render()
+        });
+    });
+
 })
 
 app.get("/trail/id/:id", function (request, response, next) {
