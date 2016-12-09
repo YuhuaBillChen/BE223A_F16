@@ -132,6 +132,47 @@ function get_bgstyle(i){
     return bgs[i%bgs.length];
 }
 
+function interpre_anno(abbr){
+    var inter_dict = {"CC":"Coordinating conjunction",
+    "CD":"Cardinal number",
+    "DT":"Determiner",
+    "EX":"Existential there",
+    "FW":"Foreign word",
+    "IN":"Preposition or subordinating conjunction",
+    "JJ":"Adjective",
+    "JJ":"Adjective, comparative",
+    "JJ":"Adjective, superlative",
+    "LS":"List item marker",
+    "MD":"Modal",
+    "NN":"Noun, singular or mass",
+    "NN":"Noun, plural",
+    "NN":"Proper noun, singular",
+    "NNP":    "Proper noun, plural",
+    "PD":"Predeterminer",
+    "PO":"Possessive ending",
+    "PR":"Personal pronoun",
+    "PRP$":    "Possessive pronoun",
+    "RB":"Adverb",
+    "RB":"Adverb, comparative",
+    "RB":"Adverb, superlative",
+    "RP":"Particle",
+    "SY":"Symbol",
+    "TO":"to",
+    "UH":"Interjection",
+    "VB":"Verb, base form",
+    "VB":"Verb, past tense",
+    "VB":"Verb, gerund or present participle",
+    "VB":"Verb, past participle",
+    "VB":"Verb, non-3rd person singular present",
+    "VB":"Verb, 3rd person singular present",
+    "WD":"Wh-determiner",
+    "WP":"Wh-pronoun",
+    "WP":"Possessive wh-pronoun",
+    "WR":"Wh-adverb"}
+    if (inter_dict[abbr]!=undefined)
+        return inter_dict[abbr];
+    return abbr;
+}
 
 function mk_annotCriteria(rows){
     dict = {};
@@ -141,7 +182,7 @@ function mk_annotCriteria(rows){
         f = JSON.parse(r.features);
         if (f.category != undefined){
             if (f.category.length > 1){
-                key = f.category;
+                key = interpre_anno(f.category);
                 if (!(key in dict)){
                     dict[key] = get_bgstyle(Object.keys(dict).length);
                 }
